@@ -100,3 +100,32 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .cart {
+    .parent {
+      .parent_flex {
+        display: block;
+        .parent_cart {
+          width: 300px;
+          height: 390px;
+          margin-bottom: 20px;
+        }
+      }
+      .parentFelx {
+        display: block;
+        margin-top: 20px;
+        .parentCart {
+          width: 300px;
+          height: 325px;
+          margin-bottom: 20px;
+          p {
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
