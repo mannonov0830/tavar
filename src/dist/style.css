@@ -373,8 +373,9 @@ a {
   height: 45px;
   padding: 10px;
   border-radius: 30px;
-  color: #fff;
-  background-color: #52e259;
+  color: #43a548;
+  background-color: #fff;
+  color: #52e259;
   font-size: 15px;
   border: 1px solid #52e259;
   margin-top: 25px;
@@ -382,8 +383,8 @@ a {
   cursor: pointer;
 }
 .cart .parent .parent_flex .parent_cart button:hover {
-  background-color: #43a548;
-  border: #43a548;
+  background-color: #52e259;
+  color: #fff;
 }
 .cart .parent .parentFelx {
   display: flex;
@@ -421,17 +422,58 @@ a {
   height: 45px;
   padding: 10px;
   border-radius: 30px;
-  color: #fff;
-  background-color: #52e259;
+  color: #52e259;
   font-size: 15px;
   border: 1px solid #52e259;
+  background-color: #fff;
   margin-top: 25px;
   transition: all 0.3s;
   cursor: pointer;
 }
 .cart .parent .parentFelx .parentCart button:hover {
+  background-color: #52e259;
+  color: #fff;
+}
+.cart .cart_gift {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px;
+  width: 1200px;
+  height: 60px;
+  background-color: #ebf6ec;
+  border-radius: 20px;
+  padding: 25px;
+}
+.cart .cart_gift .gift {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cart .cart_gift .gift img {
+  width: 40px;
+}
+.cart .cart_gift .gift h4 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #43a548;
+}
+.cart .cart_gift button {
+  width: 230px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 30px;
+  color: #fff;
   background-color: #43a548;
-  border: #43a548;
+  font-size: 15px;
+  border: 1px solid #43a548;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.cart .cart_gift button:hover {
+  background-color: #52e259;
+  border: #52e259;
 }
 
 @media (max-width: 480px) {
@@ -454,6 +496,14 @@ a {
   }
   .cart .parent .parentFelx .parentCart p br {
     display: none;
+  }
+  .cart .cart_gift {
+    width: 300px;
+    height: 170px;
+    display: block;
+  }
+  .cart .cart_gift button {
+    width: 300px;
   }
 }
 .header {
