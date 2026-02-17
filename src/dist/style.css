@@ -7,7 +7,7 @@ body {
   max-width: 1250px;
   width: 100%;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 0;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -332,10 +332,72 @@ a {
   color: #000;
 }
 
+.header {
+  -webkit-box-shadow: 2px 11px 21px -19px rgb(150, 150, 150);
+  -moz-box-shadow: 2px 11px 21px -19px rgb(150, 150, 150);
+  box-shadow: 2px 11px 21px -19px rgb(150, 150, 150);
+}
 .header .navbar .nav_flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.header .navbar .nav_flex .navImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.header .navbar .nav_flex .navImg img {
+  width: 40px;
+}
+.header .navbar .nav_flex .navImg h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c2b35;
+}
+.header .navbar .nav_flex .navText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.header .navbar .nav_flex .navText ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.header .navbar .nav_flex .navText ul li a {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  color: #2c2b35;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.header .navbar .nav_flex .navText ul li a:focus {
+  color: #52e259;
+}
+.header .navbar .nav_flex .navText ul li a:hover {
+  color: #52e259;
+}
+.header .navbar .nav_flex .navText button {
+  width: 82px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: #52e259;
+  font-size: 15px;
+  border: 1px solid #52e259;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.header .navbar .nav_flex .navText button:hover {
+  background-color: #43a548;
+  border: #43a548;
 }
 
 /*# sourceMappingURL=style.css.map */
