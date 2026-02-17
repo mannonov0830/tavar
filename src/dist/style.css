@@ -399,5 +399,26 @@ a {
   background-color: #43a548;
   border: #43a548;
 }
+.header .menuM {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 370px;
+  }
+  .header .navbar .nav_flex .navText {
+    display: none;
+  }
+  .header .navbar .nav_flex .menuM {
+    display: block;
+    font-size: 30px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .header .navbar .nav_flex .menuM:hover {
+    color: #52e259;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

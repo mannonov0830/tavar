@@ -68,4 +68,31 @@
       }
     }
   }
+  .menuM{
+    display: none;
+  }
+}
+
+@media (max-width:480px){
+  .container{
+    width: 370px;
+  }
+  .header{
+    .navbar{
+      .nav_flex{
+        .navText{
+          display: none;
+        }
+        .menuM{
+          display: block;
+          font-size: 30px;
+          transition: all 0.3s;
+          cursor: pointer;
+          &:hover{
+            color: #52e259;
+          }
+        }
+      }
+    }
+  }
 }
