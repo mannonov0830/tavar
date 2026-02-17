@@ -1,13 +1,17 @@
+.home_bg{
+  background-color: #fff;
+}
 .home {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 80px;
+  height: 550px;
   h1 {
     font-size: 45px;
     font-weight: 500;
     font-family: "Inter", sans-serif;
     color: #2c2b35;
-    margin-top: 60px;
+    margin-top: 80px;
   }
   p {
     font-size: 16px;
@@ -35,6 +39,7 @@
   }
   .home_img {
     img {
+      margin-top: 40px;
       width: 500px;
       cursor: pointer;
     }
@@ -42,6 +47,10 @@
 }
 
 @media (max-width: 480px) {
+  .home_bg{
+    height: 760px;
+    padding-top: 40px;
+  }
   .home {
     display: block;
     h1 {
