@@ -42,7 +42,176 @@
         height: 300px;
         background-color: #fff;
         border-radius: 30px;
+        padding: 10px 30px;
+        .grid_btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h4 {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: "Inter", sans-serif;
+            color: #2c2b35;
+          }
+          button {
+            width: 130px;
+            height: 35px;
+            border-radius: 30px;
+            color: #52e259;
+            font-size: 15px;
+            border: 1px solid #52e259;
+            background-color: #fff;
+            transition: all 0.3s;
+            cursor: pointer;
+            &:hover {
+              background-color: #52e259;
+              border: #52e259;
+              color: #fff;
+            }
+          }
+        }
+        ul {
+          padding-left: 20px;
+          li {
+            list-style: disc;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+            line-height: 2.2;
+            color: #838684;
+            cursor: pointer;
+            transition: all 0.3s;
+            &:hover {
+              color: #43a548;
+            }
+          }
+        }
+        h5 {
+          display: flex;
+          align-items: center;
+          color: #43a548;
+          gap: 5px;
+          font-weight: 400;
+          margin-left: 250px;
+          cursor: pointer;
+        }
       }
     }
   }
+}
+
+.can{
+    height: 235px;
+    border-radius: 30px;
+    background-color: #fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .flex_can{
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        h4{
+            font-size: 20px;
+            font-weight: 600;
+            font-family: "Inter",sans-serif;
+            color: #2c2b35;
+        }
+        p{
+            font-size: 15px;
+            font-weight: 400;
+            font-family: "Inter",sans-serif;
+            color: #838684;
+            line-height: 2;
+            span{
+                color: #43a548;
+                cursor: pointer;
+            }
+        }
+        .can_box{
+            width: 400px;
+            height: 195px;
+            background-color: #EBF5EB;
+            border-radius: 20px;
+        }
+        .can_box{
+            padding: 0px 30px;
+            h5{
+                font-size: 16px;
+                line-height: 1.4;
+                font-weight: 500;
+                font-family: "Inter",sans-serif;
+                span{
+                    color: #43a548;
+                }
+
+            }
+            .box_flex{
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                ul{
+                    padding: 0;
+                    li{
+                        font-size: 15px;
+                        font-weight: 400;
+                        font-family: "Inter",sans-serif;
+                        line-height: 2;
+                        color: #6F7973;
+                        &:nth-child(2){
+                            color: #43a548;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:480px){
+    .grid{
+        display: none;
+    }
+    .can{
+        height: 740px;
+        padding-top: 0px;
+        .flex_can{
+            display: block;
+            h4{
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.5;
+                br{
+                    display: none;
+                }
+            }
+            p{
+                font-size: 16px;
+                text-align: center;
+                br{
+                    display: none;
+                }
+            }
+            .can_box{
+                width: 240px;
+                height: 280px;
+                h5{
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 1.8;
+                    padding-top: 20px;
+                    br{
+                        display: none;
+                    }
+                }
+                .box_flex{
+                    display: block;
+                    ul{
+                        li{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
