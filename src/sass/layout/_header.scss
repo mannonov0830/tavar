@@ -1,22 +1,18 @@
+@use "../themes/mixsin";
+@use "../themes/variables";
+@use "../components/button";
 .header {
   position: fixed;
   width: 100%;
-  background-color: #fff;
+  background-color: variables.$header_bg;
   top: 0;
   z-index: 100;
-  -webkit-box-shadow: 2px 11px 21px -19px rgba(150, 150, 150, 1);
-  -moz-box-shadow: 2px 11px 21px -19px rgba(150, 150, 150, 1);
-  box-shadow: 2px 11px 21px -19px rgba(150, 150, 150, 1);
+  @extend %header_shadow_box;
   .navbar {
     .nav_flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @extend %navbar_flex;
       .navImg {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
+        @extend %navbar_flexImg;
         cursor: pointer;
         img {
           width: 40px;
@@ -24,52 +20,33 @@
         h4 {
           font-size: 24px;
           font-weight: 600;
-          color: #2c2b35;
+          color: variables.$navbar_text;
         }
       }
       .navText {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @extend %text_btn;
         gap: 20px;
         ul {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @extend %text_btn;
           gap: 40px;
           li {
             a {
               font-size: 15px;
               font-weight: 500;
               font-family: "Inter", sans-serif;
-              color: #2c2b35;
+              color: variables.$text_color;
               transition: all 0.3s;
               cursor: pointer;
               &:focus {
-                color: #52e259;
+                color: variables.$text_hover;
               }
               &:hover {
-                color: #52e259;
+                color: variables.$text_hover;
               }
             }
           }
         }
-        button {
-          width: 82px;
-          height: 45px;
-          padding: 10px;
-          border-radius: 30px;
-          color: #fff;
-          background-color: #52e259;
-          font-size: 15px;
-          border: 1px solid #52e259;
-          transition: all 0.3s;
-          cursor: pointer;
-          &:hover {
-            background-color: #43a548;
-            border: #43a548;
-          }
-        }
+        @extend %navbar_btn;
       }
     }
   }
@@ -94,7 +71,7 @@
           transition: all 0.3s;
           cursor: pointer;
           &:hover {
-            color: #52e259;
+            color: variables.$text_hover;
           }
         }
       }

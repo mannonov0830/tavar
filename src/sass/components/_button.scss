@@ -1,0 +1,39 @@
+@use "../themes/variables";
+%navbar_btn {
+  button {
+    width: 82px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: variables.$btn_color_bg;
+    font-size: 15px;
+    border: 1px solid variables.$btn_color_bg;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: variables.$btn_hover;
+      border: variables.$btn_hover;
+    }
+  }
+}
+
+%home_btn {
+  button {
+    width: 230px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 30px;
+    color: variables.$home_text;
+    background-color: variables.$btn_color_bg;
+    font-size: 15px;
+    border: 1px solid variables.$btn_color_bg;
+    margin-top: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: variables.$btn_hover;
+      border: variables.$btn_hover;
+    }
+  }
+}

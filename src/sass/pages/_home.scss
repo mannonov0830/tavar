@@ -1,42 +1,26 @@
+@use "../themes/variables";
+@use "../themes/mixsin";
+@use "../components/button";
 .home_bg {
-  background-color: #fff;
+  background-color: variables.$home_bg;
 }
 .home {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 80px;
-  height: 550px;
+  @extend %home_flex;
   h1 {
     font-size: 45px;
     font-weight: 500;
     font-family: "Inter", sans-serif;
-    color: #2c2b35;
+    color: variables.$text_color;
     margin-top: 80px;
   }
   p {
     font-size: 16px;
     font-weight: 400;
     font-family: "Inter", sans-serif;
-    color: #2c2b35;
+    color: variables.$text_color;
     line-height: 1.5;
   }
-  button {
-    width: 230px;
-    height: 45px;
-    padding: 10px;
-    border-radius: 30px;
-    color: #fff;
-    background-color: #43a548;
-    font-size: 15px;
-    border: 1px solid #43a548;
-    margin-top: 25px;
-    transition: all 0.3s;
-    cursor: pointer;
-    &:hover {
-      background-color: #52e259;
-      border: #52e259;
-    }
-  }
+  @extend %home_btn;
   .home_img {
     img {
       margin-top: 40px;
