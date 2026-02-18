@@ -1,0 +1,53 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: variables.$header_bg;
+  top: 0;
+  z-index: 100;
+  @extend %header_shadow_box;
+  .navbar {
+    .nav_flex {
+      @extend %navbar_flex;
+      .navImg {
+        @extend %navbar_flexImg;
+        cursor: pointer;
+        img {
+          width: 40px;
+        }
+        h4 {
+          font-size: 24px;
+          font-weight: 600;
+          color: variables.$navbar_text;
+        }
+      }
+      .navText {
+        @extend %text_btn;
+        gap: 20px;
+        ul {
+          @extend %text_btn;
+          gap: 40px;
+          li {
+            a {
+              font-size: 15px;
+              font-weight: 500;
+              font-family: "Inter", sans-serif;
+              color: variables.$text_color;
+              transition: all 0.3s;
+              cursor: pointer;
+              &:focus {
+                color: variables.$text_hover;
+              }
+              &:hover {
+                color: variables.$text_hover;
+              }
+            }
+          }
+        }
+        @extend %navbar_btn;
+      }
+    }
+  }
+  .menuM {
+    display: none;
+  }
+}
