@@ -1,36 +1,21 @@
+@use "../themes/mixsin";
+@use "../themes/variables";
+@use "../components/button";
 .grid {
-  background-color: #ebf5eb;
+  background-color: variables.$cart_gift;
   .grid_flex {
     height: 500px;
     margin-top: 30px;
     .grid_text {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @extend %navbar_flex;
       padding-top: 30px;
       h3 {
         font-size: 25px;
         font-weight: 600;
         font-family: "Inter", sans-serif;
-        color: #2c2b35;
+        color: variables.$text_color;
       }
-      button {
-        width: 190px;
-        height: 45px;
-        padding: 10px;
-        border-radius: 30px;
-        color: #fff;
-        font-size: 15px;
-        border: 1px solid #43a548;
-        background-color: #43a548;
-        transition: all 0.3s;
-        cursor: pointer;
-        &:hover {
-          background-color: #52e259;
-          border: #52e259;
-          color: #fff;
-        }
-      }
+      @extend %gridD_btn;
     }
     .Grid_flex {
       display: flex;
@@ -100,118 +85,117 @@
   }
 }
 
-.can{
-    height: 235px;
-    border-radius: 30px;
-    background-color: #fff;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    .flex_can{
-        padding: 20px 30px;
-        display: flex;
-        justify-content: space-between;
-        h4{
-            font-size: 20px;
-            font-weight: 600;
-            font-family: "Inter",sans-serif;
-            color: #2c2b35;
+.can {
+  height: 235px;
+  border-radius: 30px;
+  background-color: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .flex_can {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+      font-family: "Inter", sans-serif;
+      color: #2c2b35;
+    }
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+      color: #838684;
+      line-height: 2;
+      span {
+        color: #43a548;
+        cursor: pointer;
+      }
+    }
+    .can_box {
+      width: 400px;
+      height: 195px;
+      background-color: #ebf5eb;
+      border-radius: 20px;
+    }
+    .can_box {
+      padding: 0px 30px;
+      h5 {
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+        span {
+          color: #43a548;
         }
-        p{
+      }
+      .box_flex {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        ul {
+          padding: 0;
+          li {
             font-size: 15px;
             font-weight: 400;
-            font-family: "Inter",sans-serif;
-            color: #838684;
+            font-family: "Inter", sans-serif;
             line-height: 2;
-            span{
-                color: #43a548;
-                cursor: pointer;
+            color: #6f7973;
+            &:nth-child(2) {
+              color: #43a548;
             }
+          }
         }
-        .can_box{
-            width: 400px;
-            height: 195px;
-            background-color: #EBF5EB;
-            border-radius: 20px;
-        }
-        .can_box{
-            padding: 0px 30px;
-            h5{
-                font-size: 16px;
-                line-height: 1.4;
-                font-weight: 500;
-                font-family: "Inter",sans-serif;
-                span{
-                    color: #43a548;
-                }
-
-            }
-            .box_flex{
-                display: flex;
-                align-items: center;
-                gap: 40px;
-                ul{
-                    padding: 0;
-                    li{
-                        font-size: 15px;
-                        font-weight: 400;
-                        font-family: "Inter",sans-serif;
-                        line-height: 2;
-                        color: #6F7973;
-                        &:nth-child(2){
-                            color: #43a548;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }
 
-@media (max-width:480px){
-    .grid{
-        display: none;
-    }
-    .can{
-        height: 740px;
-        padding-top: 0px;
-        .flex_can{
-            display: block;
-            h4{
-                text-align: center;
-                font-size: 18px;
-                line-height: 1.5;
-                br{
-                    display: none;
-                }
-            }
-            p{
-                font-size: 16px;
-                text-align: center;
-                br{
-                    display: none;
-                }
-            }
-            .can_box{
-                width: 240px;
-                height: 280px;
-                h5{
-                    font-size: 14px;
-                    text-align: center;
-                    line-height: 1.8;
-                    padding-top: 20px;
-                    br{
-                        display: none;
-                    }
-                }
-                .box_flex{
-                    display: block;
-                    ul{
-                        li{
-                            text-align: center;
-                        }
-                    }
-                }
-            }
+@media (max-width: 480px) {
+  .grid {
+    display: none;
+  }
+  .can {
+    height: 740px;
+    padding-top: 0px;
+    .flex_can {
+      display: block;
+      h4 {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.5;
+        br {
+          display: none;
         }
+      }
+      p {
+        font-size: 16px;
+        text-align: center;
+        br {
+          display: none;
+        }
+      }
+      .can_box {
+        width: 240px;
+        height: 280px;
+        h5 {
+          font-size: 14px;
+          text-align: center;
+          line-height: 1.8;
+          padding-top: 20px;
+          br {
+            display: none;
+          }
+        }
+        .box_flex {
+          display: block;
+          ul {
+            li {
+              text-align: center;
+            }
+          }
+        }
+      }
     }
+  }
 }

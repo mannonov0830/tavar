@@ -37,3 +37,82 @@
     }
   }
 }
+
+%cart_btn {
+  button {
+    width: 190px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 30px;
+    color: variables.$cart_color;
+    background-color: variables.$btn_bg;
+    font-size: 15px;
+    border: 2px solid variables.$cart_color;
+    margin-top: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: variables.$btn_hover;
+      color: #fff;
+    }
+  }
+}
+
+%grid_btn {
+  button {
+    width: 190px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 30px;
+    color: variables.$cart_color;
+    font-size: 15px;
+    border: 2px solid variables.$cart_color;
+    background-color: variables.$btn_bg;
+    margin-top: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: variables.$btn_hover;
+      color: #fff;
+    }
+  }
+}
+
+%gift_btn {
+  button {
+    width: 230px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 30px;
+    color: variables.$home_text;
+    background-color: variables.$btn_color_bg;
+    font-size: 15px;
+    border: 1px solid variables.$btn_color_bg;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: variables.$btn_hover;
+      border: variables.$btn_hover;
+    }
+  }
+}
+
+%gridD_btn {
+  button {
+    width: 190px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 30px;
+    color: variables.$home_text;
+    font-size: 15px;
+    background-color: variables.$btn_color_bg;
+    border: 1px solid variables.$btn_color_bg;
+    margin-top: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: variables.$btn_hover;
+      color: #fff;
+    }
+  }
+}
