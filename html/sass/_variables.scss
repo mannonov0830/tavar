@@ -1,21 +1,66 @@
-$header_bg: #fff;
-$navbar_text: #2c2b35;
-$text_color: #2c2b35;
-$text_hover: #52e259;
-$btn_color_bg: #52e259;
-$btn_hover: #43a548;
-$home_bg: #fff;
-$home_text: #fff;
-$cart_text: #6f7973;
-$cart_color: #43a548;
-$btn_bg: #fff;
-$bg_color: #fff;
+/* colors */
+$text-green-500: #52E259;
+$text-green-600: #43A548;
+$text-white: #FFFFFF;
+$text-gray: #6F7973;
+$text-black: #000000;
+$text-charcoal-deep: #2C2B35;
 
-$main_bg:#f7f8f8;
-$cart_gift:#ebf6ec;
-$gift_text:#43a548;
+$bg-gray-light: #F7F8F8;
+$bg-green-500: #52E259;
+$bg-green-600: #43A548;
+$bg-white: #FFFFFF;
+$color-mint-light: #EFFBF0;
 
-$icon_color:#e21b4d;
-$icon_Color:#52e259;
+/* linear gradients */
+$gradient-green: linear-gradient(90deg, #43A548 7%, #52E259 100%);
+$soft-green-gradient: linear-gradient(135deg, #EFFBF0 0%, #EBF5EB 100%);
+$eco-bg-gradient: linear-gradient(135deg, #DFF7E0 0%, #E5F6E6 100%);
 
-$cartBg:3e1f7e2;
+/* font family */
+$font-main: 'Inter', sans-serif;
+    
+/* font sizes */
+$font-xs: 12px;
+$font-sm: 14px;
+$font-md: 16px;
+$font-lg: 20px;
+$font-xl: 24px;
+$font-2xl: 30px;
+$font-3xl: 36px;
+$font-4xl: 48px;
+
+/* font weights */
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+/* line heights */
+$lh-tight: 1.2;
+$lh-base: 1.5;
+$lh-relaxed: 1.8;
+
+/* box shadow */
+$shadow-sm: 0 2px 4px rgba(44, 43, 53, 0.15);
+$shadow-md: 0 4px 12px rgba(44, 43, 53, 0.12);
+$shadow-lg: 0 10px 25px rgba(44, 43, 53, 0.15);
+
+/* transitions */
+$transition-fast: 0.15s;
+$transition-normal: 0.3s;
+$transition-slow: 0.5s;
+
+$ease-in-out: ease-in-out;
+$ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+$trans-standard: $transition-normal $ease-in-out;
+$trans-button: $transition-fast $ease-smooth;
+
+/* border radius */
+$br-40: 40px;
+$br-20: 20px;
+$br-10: 10px;
+$br-5: 5px;

@@ -1,9 +1,10 @@
-/* Error: expected more input.
- *   ,
- * 1 | @import 
- *   |         ^
- *   '
- *   html\sass\main.scss 1:9  root stylesheet */
+/* Error: The target selector was not found.
+ * Use "@extend %navbar_btn !optional" to avoid this error.
+ *    ,
+ * 55 |         @extend %navbar_btn;
+ *    |         ^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   html\sass\_style.scss 55:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: expected more input.\a   \2577 \a 1 \2502  @import \a   \2502          ^\a   \2575 \a   html\\sass\\main.scss 1:9  root stylesheet";
+  content: 'Error: The target selector was not found.\aUse "@extend %navbar_btn !optional" to avoid this error.\a    \2577 \a 55 \2502          @extend %navbar_btn;\d\a    \2502          ^^^^^^^^^^^^^^^^^^^\a    \2575 \a   html\\sass\\_style.scss 55:9  root stylesheet';
 }
