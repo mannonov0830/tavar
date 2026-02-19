@@ -160,3 +160,101 @@
     }
   }
 }
+
+.market_input {
+  width: 1160px;
+  height: 350px;
+  background: linear-gradient(100.98deg, #43a548 -4.14%, #52e259 108.69%);
+  border-radius: 30px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+  .input_text {
+    h3 {
+      font-size: 32px;
+      font-weight: 500;
+      font-family: "Inter", sans-serif;
+      color: #fff;
+      line-height: 1.5;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      font-family: "Inter", sans-serif;
+      color: #f7f8f8;
+      line-height: 1.4;
+    }
+  }
+  .input_form {
+    padding-top: 35px;
+    form {
+      label {
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f7f8f8;
+        margin-bottom: 5px;
+        margin-top: 15px;
+      }
+      input {
+        display: block;
+        width: 500px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        outline: none;
+        border: 1px solid #fff;
+        font-size: 15px;
+        color: #43a548;
+        &::placeholder {
+          color: #6f7973;
+        }
+      }
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+          padding: 12px 30px;
+          border-radius: 30px;
+          border: 1px solid #fff;
+          margin-top: 30px;
+          color: #43a548;
+          background-color: #fff;
+          transition: all 0.3s;
+          cursor: pointer;
+          &:hover {
+            transform: translateY(-10px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:480px){
+    .market_input{
+        width: 300px;
+        height: 600px;
+        margin-left: 60px;
+        display: block;
+        padding: 15px;
+        .input_text{
+            h3{
+                font-size: 25px;
+                br{
+                    display: none;
+                }
+            }
+        }
+        .input_form{
+            padding-top: 10px;
+            form{
+                input{
+                    width: 260px;
+                }
+            }
+        }
+    }
+}
