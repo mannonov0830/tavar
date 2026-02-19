@@ -1,0 +1,33 @@
+.drov {
+  h3 {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    color: #3d4641;
+  }
+  .dawn {
+    background-color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top: 20px;
+    h4 {
+        transition: all 0.3s;
+        cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #3d4641;
+      i {
+        font-size: 20px;
+      }
+    }
+    &:hover {
+      h4 {
+        color: #52e259;
+        i {
+          color: #52e259;
+        }
+      }
+    }
+  }
+}
