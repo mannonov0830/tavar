@@ -1,0 +1,128 @@
+.market {
+  .market_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .img_flex {
+      h1 {
+        font-size: 25px;
+        font-weight: 600;
+        font-family: "Inter", sans-serif;
+        color: #2c2b35;
+      }
+      img {
+      }
+    }
+    .market_cart {
+      .cartM {
+        width: 600px;
+        height: 240px;
+        border-radius: 30px;
+        background-color: #fff;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        h3 {
+          font-size: 18px;
+          font-weight: 500;
+          font-family: "Inter", sans-serif;
+          color: #2c2b35;
+        }
+        ul {
+          padding: 0;
+          li {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+            color: #6f7973;
+            list-style: disc;
+            line-height: 1.5;
+            margin-left: 20px;
+            &:nth-child(1) {
+              font-size: 14px;
+              font-weight: 500;
+              font-family: "Inter", sans-serif;
+              color: #6f7973;
+              margin-bottom: 10px;
+              list-style: none;
+              margin-left: 0;
+            }
+            &:nth-child(2) {
+              font-size: 14px;
+              font-weight: 500;
+              font-family: "Inter", sans-serif;
+              color: #6f7973;
+              list-style: none;
+              margin-left: 0;
+            }
+            &:nth-child(6) {
+              font-size: 14px;
+              font-weight: 500;
+              font-family: "Inter", sans-serif;
+              color: #43a548;
+              list-style: none;
+              margin-left: 0;
+              margin-top: 10px;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              i {
+                margin-top: 6px;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          ul {
+            li {
+              &:nth-child(2) {
+                font-size: 14px;
+                font-weight: 500;
+                font-family: "Inter", sans-serif;
+                color: #43a548;
+                list-style: none;
+                margin-left: 0;
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                i {
+                  margin-top: 6px;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(3) {
+          height: 170px;
+          ul {
+            li {
+              &:nth-child(2) {
+                font-size: 14px;
+                font-weight: 500;
+                font-family: "Inter", sans-serif;
+                color: #43a548;
+                list-style: none;
+                margin-left: 0;
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                i {
+                  margin-top: 6px;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(4) {
+          height: 200px;
+        }
+      }
+    }
+    .frame {
+      display: none;
+    }
+  }
+}
+
+@media (max-width:480;=
