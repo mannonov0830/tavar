@@ -20,6 +20,7 @@
   top: 0;
   z-index: 1000;
   transition: 0.3s ease-in-out;
+  font-family: "Inter", sans-serif;
 }
 .header .nav {
   max-width: 1350px;
@@ -110,7 +111,6 @@
   .header .nav .header__actions .menu-icon {
     display: flex;
     flex-direction: column;
-    gap: 6px;
   }
 }
 .header .nav .header__actions .menu-icon span {
@@ -128,4 +128,13 @@
 .header .nav .header__actions .menu-icon:hover span {
   background-color: #43A548;
   width: 26px;
+}
+.header .nav .header__actions .menuM {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .header .nav .header__actions .menuM {
+    display: flex;
+    font-size: 24px;
+  }
 }/*# sourceMappingURL=main.css.map */

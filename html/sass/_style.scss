@@ -1,13 +1,13 @@
 // 2. HEADER SECTION
 .header {
-    width: 100%; // To'liq kenglik uchun
+    width: 100%; 
     background-color: $bg-white;
     border-bottom: 1px solid $bg-gray-light;
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: $trans-standard;
-
+    font-family: $font-main;
   
     .nav {
         @include container; 
@@ -16,9 +16,8 @@
         justify-content: space-between;
         height: 70px;
 
-        // LOGO QISMI
         .logo {
-            display: flex; // Mixin o'rniga oddiy flex ham bo'ladi
+            display: flex; 
             align-items: center;
             gap: 12px;
             text-decoration: none;
@@ -38,7 +37,6 @@
             }
         }
 
-        // DESKTOP MENYU
         .nav-items {
             display: flex;
             align-items: center;
@@ -64,7 +62,6 @@
             }
         }
 
-        // ACTIONS
         .header__actions {
             display: flex;
             align-items: center;
@@ -81,7 +78,6 @@
                 }
             }
 
-            // BURGER
             .menu-icon {
                 display: none;
                 background: none;
@@ -90,9 +86,9 @@
                 padding: 5px;
 
                 @include media(992px) {
-                    display: flex; // Block emas, flex qildik
+                    display: flex; 
                     flex-direction: column;
-                    gap: 6px;
+                    // gap: 6px;
                 }
 
                 span {
@@ -114,6 +110,16 @@
                     width: 26px;
                 }
             }
-        }
+              .menuM {
+          display: none;
+          
+           @include media(992px) {
+                    display: flex; 
+                    font-size: 24px;
+                 
+                }
+         }
+       }
     }
 }
+// section 1
