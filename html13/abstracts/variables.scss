@@ -1,0 +1,220 @@
+/* ============================= */
+/* Google Font */
+/* ============================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+
+/* ============================= */
+/* Variables */
+/* ============================= */
+
+/* Colors */
+$color-primary: #43a548;
+$color-accent: #52e259;
+$colorbox:#e0f7e1;
+$white: #fff;
+$black: #000;
+
+$text-dark: #2c2b35;
+$text-light: #6f7973;
+
+$bg-navbar: #ffffff;
+$bg-dark: #2c2b35;
+$bg-light-1: #effbf0;
+$bg-light-2: #ebf5eb;
+$bg-card: #effbf0;
+
+/* Gradients */
+$grad-linear: linear-gradient(90deg, $color-primary, $color-accent);
+$grad-diagonal: linear-gradient(135deg, $color-primary, $color-accent);
+$grad-soft: linear-gradient(180deg, $color-primary, $color-accent);
+$grad-main: linear-gradient(135deg, $bg-light-1, $bg-light-2);
+
+/* Shadow */
+$card-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+
+
+/* Font Sizes */
+$fs-xs: 0.75rem;
+$fs-sm: 0.875rem;
+$fs-base: 1rem;
+$fs-md: 1.125rem;
+$fs-lg: 1.25rem;
+$fs-xl: 1.5rem;
+$fs-2xl: 2rem;
+$fs-3xl: 2.5rem;
+
+/* Font Weights */
+$fw-thin: 100;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+/* Line Heights */
+$lh-none: 1;
+$lh-tight: 1.25;
+$lh-base: 1.5;
+$lh-relaxed: 1.75;
+$lh-loose: 2;
+
+
+/* ============================= */
+/* Reset */
+/* ============================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: $lh-base;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background: $bg-light-1;
+  color: $text-dark;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ============================= */
+/* Button System */
+/* ============================= */
+
+@mixin button-base {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: $fw-medium;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  @include button-base;
+}
+
+
+
+.btn-primary-solid {
+  background: $color-primary;
+  color: $white;
+
+  &:hover {
+    background: darken($color-primary, 8%);
+  }
+}
+
+.btn-wide {
+  width: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+/* colors */
+$text-green-500: #52E259;
+$text-green-600: #43A548;
+$text-white: #FFFFFF;
+$text-gray: #6F7973;
+$text-black: #000000;
+$text-charcoal-deep: #2C2B35;
+
+$bg-gray-light: #F7F8F8;
+$bg-green-500: #52E259;
+$bg-green-600: #43A548;
+$bg-white: #FFFFFF;
+$color-mint-light: #EFFBF0;
+
+/* linear gradients */
+$gradient-green: linear-gradient(90deg, #43A548 7%, #52E259 100%);
+
+$soft-green-gradient: linear-gradient(135deg, #EFFBF0 0%, #EBF5EB 100%);
+$eco-bg-gradient: linear-gradient(135deg, #DFF7E0 0%, #E5F6E6 100%);
+
+/* font family */
+$font-main: 'Inter', sans-serif;
+    
+/* font sizes */
+$font-xs: 12px;
+$font-sm: 14px;
+$font-md: 16px;
+$font-lg: 20px;
+$font-xl: 24px;
+$font-2xl: 30px;
+$font-3xl: 36px;
+$font-4xl: 48px;
+
+/* font weights */
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+/* line heights */
+$lh-tight: 1.2;
+$lh-base: 1.5;
+$lh-relaxed: 1.8;
+
+/* box shadow */
+$shadow-sm: 0 2px 4px rgba(44, 43, 53, 0.15);
+$shadow-md: 0 4px 12px rgba(44, 43, 53, 0.12);
+$shadow-lg: 0 10px 25px rgba(44, 43, 53, 0.15);
+
+/* transitions */
+$transition-fast: 0.15s;
+$transition-normal: 0.3s;
+$transition-slow: 0.5s;
+
+$ease-in-out: ease-in-out;
+$ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+$trans-standard: $transition-normal $ease-in-out;
+$trans-button: $transition-fast $ease-smooth;
+
+/* border radius */
+$br-40: 40px;
+$br-20: 20px;
+$br-10: 10px;
+$br-5: 5px;
