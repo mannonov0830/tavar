@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* colors */
 /* linear gradients */
 /* font family */
@@ -189,4 +190,298 @@
   .hero-section .title {
     font-size: 24px;
   }
+}
+
+/* 1. SECTION ASOSI */
+.products {
+  padding: 80px 0;
+  background-color: #F7F8F8;
+  font-family: "Inter", sans-serif;
+}
+
+.products-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+@media screen and (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2. KARTOCKA STILI */
+.product-card {
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(44, 43, 53, 0.15);
+}
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(44, 43, 53, 0.12);
+  transform: translateY(-5px);
+}
+
+.product-card-badge {
+  background-color: #EFFBF0;
+  color: #43A548;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.product-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.product-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2C2B35;
+  margin: 0;
+}
+
+.product-card-arrow {
+  font-size: 24px;
+  color: #000000;
+  opacity: 0.3;
+}
+
+.product-card-info {
+  background-color: #F7F8F8;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #2C2B35;
+  line-height: 1.5;
+}
+
+.product-card-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.product-card-info-item {
+  padding-left: 15px;
+  position: relative;
+  margin-bottom: 5px;
+}
+.product-card-info-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6F7973;
+}
+
+.product-card-features {
+  margin: 0 0 auto 0;
+}
+
+.product-card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #2C2B35;
+}
+.product-card-feature-item::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid #52E259;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.product-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+
+.product-card-footer .btn-primary {
+  background: #43A548;
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-card-footer .btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(44, 43, 53, 0.12);
+  transform: translateY(-2px);
+}
+.product-card-footer .btn-primary {
+  min-width: 180px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.product-card-image {
+  max-width: 140px;
+  height: auto;
+}
+@media screen and (max-width: 576px) {
+  .product-card-image {
+    display: none;
+  }
+}
+
+/* 1. ASOSIY SECTION */
+.features-section {
+  padding: 80px 0;
+  background-color: #2C2B35;
+  font-family: "Inter", sans-serif;
+  color: #FFFFFF;
+}
+
+.features-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+}
+@media screen and (max-width: 992px) {
+  .features-container {
+    flex-direction: column;
+  }
+}
+
+/* 2. CHAP TOMON (SARLAVHA VA ILLYUSTRATSIYA) */
+.features-left {
+  flex: 1;
+}
+
+.features-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+.features-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. O'NG TOMON (GRID KARTOCKALAR) */
+.features-right {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .features-right {
+    grid-template-columns: 1fr;
+  }
+}
+.features-right .card__1 {
+  margin-top: -120px;
+}
+@media screen and (max-width: 992px) {
+  .features-right .card__1 {
+    margin-top: 0px;
+  }
+}
+.features-right .card__2 {
+  margin-top: -65px;
+}
+@media screen and (max-width: 992px) {
+  .features-right .card__2 {
+    margin-top: 0px;
+  }
+}
+
+/* 4. KARTOCKA STILI */
+.feature-info-card {
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 20px;
+  color: #000000;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.feature-info-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2C2B35;
+}
+
+.feature-info-card-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6F7973;
+  margin: 0;
+}
+
+/* 5. MAXSUS KATTA KARTOCKA (O'NG TOMONDAGI UZUN KARTOCKA) */
+.feature-info-card-large {
+  grid-row: span 1;
+}
+@media screen and (max-width: 768px) {
+  .feature-info-card-large {
+    grid-row: span 3;
+  }
+}
+
+/* 6. AKSIYA TUGMASI (YASHIL KARTOCKA) */
+.feature-promo-card {
+  background: linear-gradient(90deg, #43A548 7%, #52E259 100%);
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.feature-promo-card:hover {
+  box-shadow: 0 4px 12px rgba(44, 43, 53, 0.12);
+  transform: translateY(-2px);
+}
+.feature-promo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 80px;
+  font-size: 16px;
+}
+.feature-promo-card:hover {
+  transform: scale(1.02);
+}
+
+.feature-promo-arrow {
+  font-size: 20px;
 }/*# sourceMappingURL=main.css.map */

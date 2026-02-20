@@ -174,3 +174,262 @@
         }
     }
 }
+/* 1. SECTION ASOSI */
+.products {
+  @include section; // padding: 80px 0;
+  background-color: $bg-gray-light;
+  font-family: $font-main;
+}
+
+.products-container {
+  @include container; // max-width: 1350px, margin: 0 auto
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @include media(992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2. KARTOCKA STILI */
+.product-card {
+  background-color: $bg-white;
+  padding: 40px;
+  border-radius: $br-20;
+  display: flex;
+  flex-direction: column;
+  transition: $trans-standard;
+  height: 100%;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-5px);
+  }
+}
+
+.product-card-badge {
+  background-color: $color-mint-light;
+  color: $text-green-600;
+  padding: 6px 12px;
+  border-radius: $br-5;
+  font-size: $font-xs;
+  font-weight: $fw-medium;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.product-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.product-card-title {
+  font-size: $font-xl;
+  font-weight: $fw-bold;
+  color: $text-charcoal-deep;
+  margin: 0;
+}
+
+.product-card-arrow {
+  font-size: 24px;
+  color: $text-black;
+  opacity: 0.3;
+}
+
+.product-card-info {
+  background-color: $bg-gray-light;
+  padding: 20px;
+  border-radius: $br-10;
+  margin-bottom: 25px;
+  font-size: $font-sm;
+  color: $text-charcoal-deep;
+  line-height: $lh-base;
+}
+
+.product-card-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.product-card-info-item {
+  padding-left: 15px;
+  position: relative;
+  margin-bottom: 5px;
+
+  &::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: $text-gray;
+  }
+}
+
+.product-card-features {
+  margin: 0 0 auto 0;
+}
+
+.product-card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: $font-sm;
+  color: $text-charcoal-deep;
+
+  &::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 2px solid $text-green-500;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+}
+
+.product-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+
+.product-card-footer .btn-primary {
+  @include btn($bg-green-600, $text-white);
+  min-width: 180px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.product-card-image {
+  max-width: 140px;
+  height: auto;
+
+  @include media(576px) {
+    display: none;
+  }
+}
+/* 1. ASOSIY SECTION */
+.features-section {
+  @include section; // padding: 80px 0
+  background-color: #2C2B35; // $text-charcoal-deep rangini fon sifatida ishlatamiz
+  font-family: $font-main;
+  color: $text-white;
+}
+
+.features-container {
+  @include container;
+  display: flex;
+  gap: 40px;
+
+  @include media(992px) {
+    flex-direction: column;
+  }
+}
+
+/* 2. CHAP TOMON (SARLAVHA VA ILLYUSTRATSIYA) */
+.features-left {
+  flex: 1;
+}
+
+.features-title {
+  font-size: $font-3xl;
+  font-weight: $fw-bold;
+  line-height: $lh-tight;
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+.features-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. O'NG TOMON (GRID KARTOCKALAR) */
+.features-right {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @include media(768px) {
+    grid-template-columns: 1fr;
+  }
+  .card__1{
+    margin-top: -120px;
+      @include media(992px) {
+       margin-top: 0px;
+  }
+  }
+  .card__2{
+    margin-top: -65px;
+     @include media(992px) {
+       margin-top: 0px;
+  }
+  }
+}
+
+/* 4. KARTOCKA STILI */
+.feature-info-card {
+  background-color: $bg-white;
+  padding: 30px;
+  border-radius: $br-20;
+  color: $text-black;
+  height: fit-content;
+}
+
+.feature-info-card-title {
+  font-size: $font-lg;
+  font-weight: $fw-bold;
+  margin-bottom: 15px;
+  color: $text-charcoal-deep;
+}
+
+.feature-info-card-text {
+  font-size: $font-sm;
+  line-height: $lh-base;
+  color: $text-gray;
+  margin: 0;
+}
+
+/* 5. MAXSUS KATTA KARTOCKA (O'NG TOMONDAGI UZUN KARTOCKA) */
+.feature-info-card-large {
+  grid-row:  span 1; // Ikkita qatorni egallaydi
+
+
+  
+  @include media(768px) {
+    grid-row: span 3;
+  }
+}
+
+/* 6. AKSIYA TUGMASI (YASHIL KARTOCKA) */
+.feature-promo-card {
+  @include btn($gradient-green, $text-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  border-radius: $br-20; // Kartochka ko'rinishida bo'lgani uchun
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 80px;
+  font-size: $font-md;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.feature-promo-arrow {
+  font-size: 20px;
+}
