@@ -2,176 +2,115 @@
 @include reset;
 
 // 2. HEADER SECTION
+/* --- HEADER SECTION --- */
 .header {
-    width: 100%; 
-    background-color: $bg-white;
-    border-bottom: 1px solid $bg-gray-light;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: $trans-standard;
-    font-family: $font-main;
-  
-    .nav {
-        @include container; 
-        @include flex-center; 
-       
-        justify-content: space-between;
-        height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: variables.$header_bg;
+  @extend %header_shadow_box;
 
-        .logo {
-            display: flex; 
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
+  .navbar {
+    .nav_flex {
+      @extend %navbar_flex;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0; // O'zingizga moslab o'zgartirishingiz mumkin
 
-            img {
-                width: 32px;
-                height: auto;
-                display: block;
-            }
-
-            .size {
-                font-size: 20px;
-                font-weight: $fw-bold;
-                color: $text-black;
-                letter-spacing: -0.5px;
-                line-height: 1;
-            }
-        }
-
-        .nav-items {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            list-style: none;
-            margin-left: auto; // margin-left: 400px o'rniga auto yaxshi, elementlar o'rtaga suriladi
-            
-            @include media(992px) {
-                display: none; 
-            }
-
-            .nav-item {
-                a {
-                    text-decoration: none;
-                    color: $text-charcoal-deep;
-                    font-size: $font-md;
-                    font-weight: $fw-medium;
-                    transition: $trans-standard;
-
-                    &:hover {
-                        color: $text-green-600;
-                    }
-                }
-            }
-        }
-
-        .header__actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-left: 40px;
-
-            .btn-primary {
-                @include btn($gradient-green, $text-white);
-                display: inline-block;
-                text-decoration: none;
-                font-size: $font-sm;
-                
-                @include media(992px) {
-                    display: none; 
-                }
-            }
-
-            .menu-icon {
-                display: none;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 5px;
-
-                @include media(992px) {
-                    display: flex; 
-                    flex-direction: column;
-                    gap: 6px;
-                }
-
-                span {
-                    display: block;
-                    width: 26px;
-                    height: 2px;
-                    background-color: $text-charcoal-deep;
-                    border-radius: 2px;
-                    transition: $trans-standard;
-
-                    &:last-child {
-                        width: 18px;
-                        align-self: flex-end;
-                    }
-                }
-
-                &:hover span {
-                    background-color: $text-green-600;
-                    width: 26px;
-                }
-            }
-
-            .menuM {
-                display: none;
-                @include media(992px) {
-                    display: flex; 
-                    font-size: 24px;
-                }
-            }
-        }
-    }
-}
-
-.hero-section {
-    background: $gradient-green;
-    @include section; // padding: 80px 0;
-    padding-top: 50px; // Dizaynga moslash uchun
-    padding-bottom: 50px;
-    font-family: $font-main;
-    color: $text-white;
-
-    .container {
-        @include container;
-    }
-
-    .breadcrumbs {
+      /* LOGO QISMI */
+      .navImg {
+        @extend %navbar_flexImg;
         display: flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 15px;
-        font-size: $font-sm;
-        opacity: 0.9;
+        gap: 10px;
+        cursor: pointer;
 
-        a {
-            color: $text-white;
-            text-decoration: none;
-            transition: $trans-standard;
+        img {
+          width: 40px;
+          height: auto;
+        }
 
-            &:hover {
-                opacity: 0.7;
+        h4 {
+          font-size: 24px;
+          font-weight: 600;
+          color: variables.$navbar_text;
+          margin: 0;
+        }
+      }
+
+      /* NAVIGATSIYA MENU VA TUGMA */
+      .navText {
+        @extend %text_btn;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        ul {
+          @extend %text_btn;
+          display: flex;
+          list-style: none;
+          gap: 40px;
+          margin: 0;
+          padding: 0;
+
+          li {
+            a {
+              font-size: 15px;
+              font-weight: 500;
+              font-family: $font-main; // "Inter", sans-serif o'rniga o'zgaruvchingiz
+              color: variables.$text_color;
+              transition: $trans-standard; // Transition o'zgaruvchingiz
+              text-decoration: none;
+
+              &:hover, 
+              &:focus {
+                color: variables.$text_hover;
+              }
             }
+          }
         }
 
-        .separator {
-            font-size: $font-xs;
-            opacity: 0.8;
+        /* Tugma qismi (agar extend ichida bo'lmasa) */
+        @extend %navbar_btn;
+      }
+
+      /* MOBIL MENU ICON */
+      .menuM {
+        display: none;
+        font-size: 30px;
+        transition: $trans-standard;
+        cursor: pointer;
+
+        &:hover {
+          color: variables.$text_hover;
         }
+      }
     }
+  }
+}
 
-    .title {
-        font-size: $font-3xl; // 36px
-        font-weight: $fw-semibold;
-        margin: 0;
+/* RESPONSIVE (MEDIA QUERIES) */
+@media (max-width: 480px) {
+  .container {
+    width: 360px; // Ekranga sig'ishi uchun
+  }
 
-        @include media(768px) {
-            font-size: $font-xl;
+  .header {
+    .navbar {
+      .nav_flex {
+        .navText {
+          display: none; // Menuni yashirish
         }
+
+        .menuM {
+          display: block; // Burger menuni ko'rsatish
+        }
+      }
     }
+  }
 }
 /* --- PRODUCT DETAIL SECTION --- */
 .product-detail-section {
@@ -314,6 +253,8 @@
 
 .help-container {
   @include container; // max-width: 1350px
+  margin-top: -120px;
+  
 }
 
 /* GRID MOZAIKA TIZIMI */
@@ -424,4 +365,761 @@
 }
 .help-card:nth-child(7) {
   grid-column: span 3; // Pastki katta blok (to'liq kenglik)
+}
+/* --- TARIFF SECTION --- */
+.tariff-section {
+  @include section;
+  background-color: #F8F9FA;
+  font-family: $font-main;
+}
+
+.tariff-container {
+  @include container;
+}
+
+.tariff-title {
+  font-size: 28px;
+  font-weight: $fw-bold;
+  text-align: center;
+  color: #2D2E32;
+  margin-bottom: 50px;
+}
+
+/* JADVALNI KARTALARDAN TASHKIL TOPGAN QILAMIZ */
+.tariff-wrapper {
+  display: flex;
+  gap: 20px; // Kartalar orasidagi masofa
+  align-items: stretch;
+
+  @include media(1100px) {
+    flex-direction: column;
+  }
+}
+
+/* HAR BIR USTUN ALOHIDA KARTOCHKA */
+.tariff-column {
+  background-color: $bg-white;
+  border-radius: 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  // Chap tomondagi funksiyalar ro'yxati ustuni
+  &.column-features {
+    background-color: transparent; // Bu ustun foni yo'q
+    box-shadow: none;
+    .tariff-row { 
+        justify-content: flex-start;
+        padding-left: 20px;
+        font-weight: $fw-medium;
+        background-color: transparent;
+    }
+    .tariff-row-head { 
+        background-color: transparent;
+        font-size: 20px;
+        color: #2D2E32;
+    }
+  }
+}
+
+/* QATORLAR STILI */
+.tariff-row-head {
+  height: 120px; // Sarlavha balandligi
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  
+  h3 { font-size: 18px; margin-bottom: 5px; color: #2D2E32; }
+  span { font-size: 12px; color: #9A9A9A; }
+}
+
+.tariff-row {
+  height: 55px; // Har bir qatorning aniq balandligi
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #4A4A4A;
+  border-bottom: 1px solid rgba(0,0,0, 0.02);
+
+  /* Rasmda ko'rsatilganidek bir qator tashlab rang berish */
+  &:nth-child(even) {
+    background-color: #F9FFF9; // Och yashil qator
+  }
+}
+
+/* BELGILAR */
+.status-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  
+  &.check {
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    &::after { content: "L"; transform: rotate(45deg) scaleX(-1); margin-top: -2px; }
+  }
+  
+  &.cross {
+    color: #FF5252;
+    border: 2px solid #FF5252;
+    &::after { content: "×"; font-size: 18px; }
+  }
+}
+
+/* FOOTER: NARX VA TUGMA */
+.tariff-footer {
+  margin-top: auto;
+  padding: 30px 20px;
+  text-align: center;
+
+  .price {
+    font-size: 20px;
+    font-weight: $fw-bold;
+    color: #2D2E32;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .choose-label {
+    color: $text-green-500;
+    font-weight: $fw-bold;
+    font-size: 18px;
+  }
+}
+
+.btn-order {
+  @include btn($gradient-green, $text-white);
+  width: 100%;
+  max-width: 160px;
+  padding: 12px;
+  border-radius: 40px;
+  font-size: 15px;
+  border: none;
+}
+.features-section {
+  @include section; 
+  background-color: #2C2B35; 
+  font-family: $font-main;
+  color: $text-white;
+}
+
+.features-container {
+  @include container;
+  display: flex;
+  gap: 40px;
+
+  @include media(992px) {
+    flex-direction: column;
+  }
+}
+
+.features-left {
+  flex: 1;
+}
+
+.features-title {
+  font-size: $font-3xl;
+  font-weight: $fw-bold;
+  line-height: $lh-tight;
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+.features-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+.features-right {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @include media(768px) {
+    grid-template-columns: 1fr;
+  }
+  .card__1{
+    margin-top: -120px;
+      @include media(992px) {
+       margin-top: 0px;
+  }
+  }
+  .card__2{
+    margin-top: -65px;
+     @include media(992px) {
+       margin-top: 0px;
+  }
+  }
+}
+
+.feature-info-card {
+  background-color: $bg-white;
+  padding: 30px;
+  border-radius: $br-20;
+  color: $text-black;
+  height: fit-content;
+}
+
+.feature-info-card-title {
+  font-size: $font-lg;
+  font-weight: $fw-bold;
+  margin-bottom: 15px;
+  color: $text-charcoal-deep;
+}
+
+.feature-info-card-text {
+  font-size: $font-sm;
+  line-height: $lh-base;
+  color: $text-gray;
+  margin: 0;
+}
+
+.feature-info-card-large {
+  grid-row:  span 1; 
+
+
+  
+  @include media(768px) {
+    grid-row: span 3;
+  }
+}
+
+.feature-promo-card {
+  @include btn($gradient-green, $text-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  border-radius: $br-20; 
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 80px;
+  font-size: $font-md;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.feature-promo-arrow {
+  font-size: 20px;
+}
+.partners-section {
+  padding: 60px 0;
+  text-align: center;
+  font-family: $font-main;
+}
+
+.partners-container {
+  @include container; // max-width: 1350px
+}
+
+.partners-title {
+  font-size: $font-xl;
+  font-weight: $fw-semibold;
+  color: $text-charcoal-deep;
+  margin-bottom: 50px;
+}
+
+.partners-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @include media(768px) {
+    justify-content: center;
+  }
+}
+
+.partners-logo-item {
+  max-height: 45px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: $trans-standard;
+
+  &:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
+/* 2. QO'LLAB-QUVVATLASH BO'LIMI (SUPPORT) */
+.support-section {
+  @include section; // padding: 80px 0
+  background-color: $bg-gray-light;
+  font-family: $font-main;
+}
+
+.support-container {
+  @include container;
+}
+
+.support-title {
+  font-size: $font-xl;
+  font-weight: $fw-semibold;
+  color: $text-charcoal-deep;
+  margin-bottom: 45px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @include media(992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.support-card {
+  background-color: $bg-white;
+  padding: 32px;
+  border-radius: $br-20;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: $trans-standard;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+  }
+}
+
+.support-card-icon-wrapper {
+  background-color: $color-mint-light;
+  width: 52px;
+  height: 52px;
+  border-radius: $br-10;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.support-card-icon-wrapper img {
+  width: 24px;
+  height: 24px;
+}
+
+.support-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.support-card-name {
+  font-size: $font-md;
+  font-weight: $fw-bold;
+  color: $text-charcoal-deep;
+  margin: 0;
+}
+
+.support-card-text {
+  font-size: $font-sm;
+  color: $text-gray;
+  line-height: $lh-base;
+  margin: 0;
+}
+/* --- FREE PRODUCTS SLIDER SECTION --- */
+.free-products-section {
+  background: $gradient-green; // Sening linear-gradient(90deg, #43A548 7%, #52E259 100%)
+  @include section; // padding: 80px 0
+  font-family: $font-main;
+  color: $text-white;
+  position: relative;
+  overflow: hidden;
+}
+
+.free-products-container {
+  @include container;
+  position: relative;
+}
+
+.free-products-title {
+  font-size: $font-3xl;
+  font-weight: $fw-semibold;
+  margin-bottom: 50px;
+  
+  @include media(768px) {
+    font-size: $font-xl;
+    text-align: center;
+  }
+}
+
+/* --- SLIDER NAVIGATION (Arrow buttons) --- */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: $text-white;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: $trans-standard;
+  z-index: 10;
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+}
+
+.slider-arrow-left {
+  left: -40px;
+  @include media(1400px) { left: 10px; }
+}
+
+.slider-arrow-right {
+  right: -40px;
+  @include media(1400px) { right: 10px; }
+}
+
+/* --- CARDS GRID --- */
+.free-products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @include media(992px) {
+    grid-template-columns: 1fr;
+  }
+}
+.consult-section {
+  @include section; // padding: 80px 0
+  background-color: $bg-white;
+  font-family: $font-main;
+}
+
+.consult-container {
+  @include container;
+}
+
+.consult-wrapper {
+  background: $gradient-green; // Sening yashil gradienting
+  padding: 60px;
+  border-radius: $br-40; // Rasmda juda yumaloq burchaklar
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  @include media(992px) {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+}
+
+/* --- CHAP TOMON: MATN --- */
+.consult-info {
+  flex: 1;
+  color: $text-white;
+}
+
+.consult-title {
+  font-size: $font-2xl;
+  font-weight: $fw-bold;
+  margin-bottom: 20px;
+  line-height: $lh-tight;
+}
+
+.consult-description {
+  font-size: $font-md;
+  opacity: 0.9;
+  line-height: $lh-base;
+}
+
+/* --- O'NG TOMON: FORMA --- */
+.consult-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.consult-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.consult-label {
+  color: $text-white;
+  font-size: $font-sm;
+  font-weight: $fw-medium;
+}
+
+.consult-input {
+  background-color: $bg-white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: $br-40;
+  font-size: $font-sm;
+  color: $text-charcoal-deep;
+  outline: none;
+  transition: $trans-standard;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+}
+/* --- SUBMIT QISMI --- */
+.consult-form-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+
+  @include media(576px) {
+    flex-direction: column;
+  }
+}
+
+.consult-policy-text {
+  font-size: $font-xs;
+  color: $text-white;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.consult-submit-btn {
+  background-color: #2D2D35; // To'q kulrang tugma
+  color: $text-white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: $br-40;
+  font-weight: $fw-bold;
+  font-size: $font-sm;
+  cursor: pointer;
+  transition: $trans-standard;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #1a1a1f;
+    transform: translateY(-2px);
+  }
+}
+/* --- SEO TEXT SECTION --- */
+.seo-section {
+  @include section; // padding: 80px 0
+  background-color: $bg-gray-light;
+  font-family: $font-main;
+}
+
+.seo-container {
+  @include container;
+}
+
+.seo-title {
+  font-size: $font-xl;
+  font-weight: $fw-bold;
+  color: $text-charcoal-deep;
+  margin-bottom: 25px;
+}
+
+.seo-content {
+  max-width: 2000px;
+}
+
+.seo-text {
+  font-size: $font-sm;
+  line-height: $lh-base;
+  color: $text-charcoal-deep;
+  margin-bottom: 20px;
+}
+
+.seo-link {
+  color: $text-green-600;
+  text-decoration: underline;
+  font-weight: $fw-medium;
+  transition: $trans-standard;
+
+  &:hover {
+    color: $text-green-500;
+    text-decoration: none;
+  }
+}
+
+/* --- FOOTER SIMPLIFIED (Agar kerak bo'lsa) --- */
+.footer-simple {
+  padding: 40px 0;
+  background-color: $bg-white;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: $font-xs;
+  color: $text-gray;
+}
+/* --- FOOTER SECTION --- */
+.footer {
+  background-color: #2D2D35; // To'q kulrang fon
+  padding: 60px 0 30px 0;
+  color: $text-white;
+  font-family: $font-main;
+}
+
+.footer-container {
+  @include container;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+
+  @include media(992px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.footer-brand {
+  flex: 1.5;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
+  text-decoration: none;
+
+  @include media(992px) { justify-content: center; }
+}
+
+.footer-logo-img {
+  width: 35px;
+  height: auto;
+}
+
+.footer-logo-text {
+  font-size: 22px;
+  font-weight: $fw-bold;
+  color: $text-white;
+}
+
+.footer-contacts {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+
+  @include media(576px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-contact-label {
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-contact-value {
+  font-size: 18px;
+  font-weight: $fw-semibold;
+  color: $text-white;
+  text-decoration: none;
+}
+
+.footer-btn-call {
+  @include btn($gradient-green, $text-white);
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: $br-40;
+  text-decoration: none;
+  font-size: $font-sm;
+  font-weight: $fw-bold;
+}
+
+/* --- NAVIGATSIYA USTUNLARI --- */
+.footer-nav {
+  display: flex;
+  gap: 80px;
+
+  @include media(768px) {
+    gap: 40px;
+    justify-content: space-around;
+  }
+}
+
+.footer-nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-nav-title {
+  font-size: 18px;
+  font-weight: $fw-bold;
+  margin-bottom: 10px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-nav-link {
+  color: #ccc;
+  text-decoration: none;
+  font-size: $font-sm;
+  transition: $trans-standard;
+
+  &:hover {
+    color: $text-white;
+  }
+}
+
+/* --- FOOTER BOTTOM (COPYRIGHT) --- */
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #777;
+
+  @include media(576px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.footer-dev-link {
+  color: #777;
+  text-decoration: none;
+  &:hover { color: #fff; }
 }
