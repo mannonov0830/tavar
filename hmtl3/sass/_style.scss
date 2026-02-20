@@ -127,3 +127,49 @@
     }
 }
 
+.hero-section {
+    background: $gradient-green;
+    @include section; // padding: 80px 0;
+    padding-top: 50px; // Dizaynga moslash uchun
+    padding-bottom: 50px;
+    font-family: $font-main;
+    color: $text-white;
+
+    .container {
+        @include container;
+    }
+
+    .breadcrumbs {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 15px;
+        font-size: $font-sm;
+        opacity: 0.9;
+
+        a {
+            color: $text-white;
+            text-decoration: none;
+            transition: $trans-standard;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        .separator {
+            font-size: $font-xs;
+            opacity: 0.8;
+        }
+    }
+
+    .title {
+        font-size: $font-3xl; // 36px
+        font-weight: $fw-semibold;
+        margin: 0;
+
+        @include media(768px) {
+            font-size: $font-xl;
+        }
+    }
+}
