@@ -1,0 +1,93 @@
+/* ============================= */
+/* Google Font */
+/* ============================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* ============================= */
+/* Variables */
+/* ============================= */
+/* Colors */
+/* Gradients */
+/* Shadow */
+/* Font Sizes */
+/* Font Weights */
+/* Line Heights */
+/* ============================= */
+/* Reset */
+/* ============================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background: #effbf0;
+  color: #2c2b35;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================= */
+/* Button System */
+/* ============================= */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary-solid {
+  background: #43a548;
+  color: #fff;
+}
+.btn-primary-solid:hover {
+  background: rgb(55.2172413793, 135.9827586207, 59.3379310345);
+}
+
+.btn-wide {
+  width: 250px;
+}
+
+/* colors */
+/* linear gradients */
+/* font family */
+/* font sizes */
+/* font weights */
+/* line heights */
+/* box shadow */
+/* transitions */
+/* border radius *//*# sourceMappingURL=variables.css.map */

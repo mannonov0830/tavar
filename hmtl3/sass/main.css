@@ -325,4 +325,128 @@
 .product-detail-illustration {
   max-width: 100%;
   height: auto;
+}
+
+/* --- HELP (SERVICES) SECTION --- */
+.help-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+}
+
+.help-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* GRID MOZAIKA TIZIMI */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 40px 0;
+}
+@media screen and (max-width: 992px) {
+  .help-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* KARTOCKA ASOSIY STILI */
+.help-card {
+  min-height: 250px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(44, 43, 53, 0.12);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.help-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(44, 43, 53, 0.15);
+}
+
+/* KARTOCKA ICHIDAGI ELEMENTLAR */
+.help-card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.help-card-icon {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.help-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2B35;
+  margin: 0;
+}
+
+.help-card-description {
+  font-size: 14px;
+  color: #6F7973;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* TUGMA (Button-outline) */
+.help-card-btn {
+  background: transparent;
+  border: 1px solid #52E259;
+  color: #43A548;
+  padding: 10px 25px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.help-card-btn:hover {
+  background: linear-gradient(90deg, #43A548 7%, #52E259 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+}
+
+/* GRID POZITSIYALARI (Sening CSS mantiqing asosida) */
+.help-card:nth-child(1) {
+  grid-column: span 3;
+}
+
+.help-card:nth-child(2) {
+  grid-column: span 3;
+}
+
+.help-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+.help-card:nth-child(4) {
+  grid-column: span 2;
+}
+
+.help-card:nth-child(5) {
+  grid-column: span 2;
+}
+
+.help-card:nth-child(6) {
+  grid-column: span 3;
+}
+
+.help-card:nth-child(7) {
+  grid-column: span 3;
 }/*# sourceMappingURL=main.css.map */
