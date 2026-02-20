@@ -190,7 +190,12 @@
   .hero-section .title {
     font-size: 24px;
   }
+
+
+
+
 }
+
 
 /* --- PRODUCT DETAIL SECTION --- */
 .product-detail-section {
@@ -325,6 +330,7 @@
 .product-detail-illustration {
   max-width: 100%;
   height: auto;
+
 }
 
 /* --- HELP (SERVICES) SECTION --- */
@@ -1298,4 +1304,4 @@
 }
 .footer-dev-link:hover {
   color: #fff;
-}/*# sourceMappingURL=main.css.map */
+}
