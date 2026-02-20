@@ -1,0 +1,64 @@
+@mixin container-max($max-width: 1200px) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $max-width;
+  padding: 0 1rem;
+}
+@mixin nachat{
+ 
+}
+/* RESET */
+@mixin reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* FLEX CENTER */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTAINER */
+@mixin container {
+.container {
+  max-width: 1200px;
+  padding: 0 20px;  // padding kichik ekranda katta joy oladi
+  margin: 0 auto;
+  box-sizing: border-box;  // paddingni hisobga olishi uchun juda muhim
+}
+}
+
+/* SECTION PADDING */
+@mixin section {
+  padding: 80px 0;
+}
+
+/* BUTTON */
+@mixin btn($bg, $color) {
+  background: $bg;
+  color: $color;
+  padding: 12px 28px;
+  border-radius: $br-40;
+  font-weight: $fw-medium;
+  cursor: pointer;
+  transition: $trans-button;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+// Media query uchun mixin
+@mixin media($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// Boshqa mixinlaringiz (reset, flex-center, btn) shu yerdan davom etsin...
