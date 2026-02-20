@@ -190,6 +190,7 @@
   .hero-section .title {
     font-size: 24px;
   }
+
 }
 
 /* --- PRODUCT DETAIL SECTION --- */
@@ -450,3 +451,4 @@
 .help-card:nth-child(7) {
   grid-column: span 3;
 }
+
